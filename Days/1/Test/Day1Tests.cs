@@ -1,6 +1,7 @@
-using System.Runtime.CompilerServices;
+using Days._1.Src;
+using Days.Helpers;
 
-namespace Tests;
+namespace Days._1.Test;
 
 public class Day1Tests
 {

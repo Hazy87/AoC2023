@@ -1,10 +1,10 @@
-using Flurl.Http;
+namespace Days.Helpers;
 
 public static class AdventOfCodeHelpers
 {
     private static string _directoryPathTemplate = "Inputs/{0}";
     private static string _pathTemplate = "{0}/input.txt";
-    private static string _session = File.ReadAllText("session");
+    private static string _session = File.ReadAllText("Helpers/session");
 
 
     public static async Task LoadInput(int day)

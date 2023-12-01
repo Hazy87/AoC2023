@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode2023", "AdventOfCode2023\AdventOfCode2023.csproj", "{E5E15D2B-C915-4139-A58A-5176FBAFB757}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{F68B9899-722D-4243-8B55-C66AFADB4379}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Days", "Days\Days.csproj", "{F68B9899-722D-4243-8B55-C66AFADB4379}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,10 +8,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E5E15D2B-C915-4139-A58A-5176FBAFB757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E5E15D2B-C915-4139-A58A-5176FBAFB757}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E5E15D2B-C915-4139-A58A-5176FBAFB757}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E5E15D2B-C915-4139-A58A-5176FBAFB757}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F68B9899-722D-4243-8B55-C66AFADB4379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F68B9899-722D-4243-8B55-C66AFADB4379}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F68B9899-722D-4243-8B55-C66AFADB4379}.Release|Any CPU.ActiveCfg = Release|Any CPU

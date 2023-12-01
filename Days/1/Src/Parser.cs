@@ -1,4 +1,4 @@
-using System.Runtime.InteropServices.JavaScript;
+namespace Days._1.Src;
 
 public class Parser
 {
