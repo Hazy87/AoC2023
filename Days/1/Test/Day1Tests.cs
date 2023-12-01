@@ -19,7 +19,7 @@ treb7uchet
     //[Test]
     public async Task RealPart1()
     {
-        var str = await AdventOfCodeHelpers.GetLinesFromInput(1);
+        var str = await FileHelpers.GetLinesFromInput(1);
         var output = Parser.Parse(str);
         Assert.That(output, Is.EqualTo(54634));
     }
@@ -41,7 +41,7 @@ zoneight234
     [Test]
     public async Task RealPart2()
     {
-        var str = await AdventOfCodeHelpers.GetLinesFromInput(1);
+        var str = await FileHelpers.GetLinesFromInput(1);
         var output = Parser.Parse(str);
         Assert.That(output, Is.EqualTo(53855));
     }

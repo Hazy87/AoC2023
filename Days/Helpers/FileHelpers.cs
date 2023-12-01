@@ -1,6 +1,6 @@
 namespace Days.Helpers;
 
-public static class AdventOfCodeHelpers
+public static class FileHelpers
 {
     private static string _directoryPathTemplate = "Inputs/{0}";
     private static string _pathTemplate = "{0}/input.txt";
