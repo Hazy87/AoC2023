@@ -10,12 +10,17 @@ public class Day2Service
     {
         var lines = str.Split("\n").Where(x => !string.IsNullOrEmpty(x));
         var games = lines.Select(x =>ParseLine(x));
-        return ValidateGame(games);
+        return GetPower(games);
     }
 
     private static int ValidateGame(IEnumerable<Game> games)
     {
         return games.Where(x => x.Blue <= _maxBlue && x.Red <= _maxRed && x.Green <= _maxGreen).Sum(x => x.Id);
+    }
+
+    private static int GetPower(IEnumerable<Game> games)
+    {
+        return games.Select(x => x.Blue * x.Red * x.Green).Sum();
     }
 
     private static Game  ParseLine(string line)
@@ -28,9 +33,6 @@ public class Day2Service
         var red = GetColourCount(colourStrings, "red");
         var green = GetColourCount(colourStrings, "green");
 
-        foreach (var colourString in colourStrings)
-        {
-        }
         var game = new Game
         {
             Id = int.Parse(line.Substring(5, line.IndexOf(":")-5)),

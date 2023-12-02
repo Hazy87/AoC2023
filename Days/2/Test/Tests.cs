@@ -15,14 +15,14 @@ Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
 Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green
 ";
         var result = Day2Service.Run(sample);
-        Assert.That(result, Is.EqualTo(8));
+        Assert.That(result, Is.EqualTo(2286));
     }
     [Test]
     public async Task RealPart2()
     {
         var str = await FileHelpers.GetLinesFromInput(2);
         var output = Day2Service.Run(str);
-        Assert.That(output, Is.EqualTo(2416));
+        Assert.That(output, Is.EqualTo(4963));
     }
     
 }
