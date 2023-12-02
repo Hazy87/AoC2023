@@ -23,7 +23,7 @@ public static class FileHelpers
 
     public static async Task<string> GetLinesFromInput(int day)
     {
-        await LoadInput(1);
+        await LoadInput(day);
         var (_, filePath) = MakePaths(day);
         return await File.ReadAllTextAsync(filePath);
     }
