@@ -27,6 +27,12 @@ public static class FileHelpers
         var (_, filePath) = MakePaths(day);
         return await File.ReadAllTextAsync(filePath);
     }
+    
+    public static async Task<IEnumerable<string>> GetLinesFromInputAsLines(int day)
+    {
+        return (await GetLinesFromInput(day)).Split("\n").Where(x => !string.IsNullOrEmpty(x));
+        
+    }
 
     private static (string directoryPath, string filePath) MakePaths(int day)
     {
