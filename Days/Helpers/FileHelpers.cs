@@ -41,3 +41,11 @@ public static class FileHelpers
         return (directoryPath,path);
     }
 }
+
+public static class StringExtensions
+{
+    public static string[] NewLineSplit(this string str, bool part2 = true)
+    {
+        return str.Split("\n");
+    }
+}
