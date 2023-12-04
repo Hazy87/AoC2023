@@ -21,7 +21,7 @@ Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11";
     {
         var str = await FileHelpers.GetLinesFromInput(4);
         var output = Day4Service.Run(str);
-        Assert.That(output, Is.EqualTo(54634));
+        Assert.That(output, Is.EqualTo(20667));
     }
     
 }
