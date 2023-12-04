@@ -19,7 +19,7 @@ public class Day3Tests
 ...$.*....
 .664.598..";
         var result = Day3Service.Run(sample.Split("\n").Where(x => !string.IsNullOrEmpty(x)));
-        Assert.That(result, Is.EqualTo(4361));
+        Assert.That(result, Is.EqualTo(467835));
     }
     [Test]
     public void SamplePart3_Edge()
@@ -37,6 +37,8 @@ public class Day3Tests
         var result = Day3Service.Run(sample.Split("\n").Where(x => !string.IsNullOrEmpty(x)));
         Assert.That(result, Is.EqualTo(4427));
     }
+    
+    
     [Test]
     public async Task RealPart3()
     {

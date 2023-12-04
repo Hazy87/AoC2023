@@ -14,33 +14,36 @@ public class Day3Service
     private static int MakeArray(List<string> list)
     {
         var engineParts = new List<int>();
-        char[,] numbers = new char[list.Count, list[list.Count - 1].Length - 1];
         for (int i = 0; i < list.Count - 1; i++)
         {
-            for (int j = 0; j < list[i].Length - 1; j++)
+            
+            var gearRatios = new List<int>();
+            for (int j = 0; j < list[i].Length; j++)
             {
                 var myChar = list[i][j];
-                if (Char.IsNumber(myChar) || myChar == '.')
+                if (myChar != '*')
                     continue;
                 var upPart = GetEngineParts(list, i + 1, j);
-                engineParts.Add(upPart);
+                gearRatios.Add(upPart);
                 var downPart = GetEngineParts(list, i - 1, j);
-                engineParts.Add(downPart);
-                engineParts.Add(GetEngineParts(list, i, j + 1));
-                engineParts.Add(GetEngineParts(list, i, j - 1));
+                gearRatios.Add(downPart);
+                gearRatios.Add(GetEngineParts(list, i, j + 1));
+                gearRatios.Add(GetEngineParts(list, i, j - 1));
 
                 if (upPart == 0)
                 {
-                    engineParts.Add(GetEngineParts(list, i + 1, j + 1));
-                    engineParts.Add(GetEngineParts(list, i + 1, j - 1));
+                    gearRatios.Add(GetEngineParts(list, i + 1, j + 1));
+                    gearRatios.Add(GetEngineParts(list, i + 1, j - 1));
                 }
 
                 if (downPart == 0)
                 {
-                    engineParts.Add(GetEngineParts(list, i - 1, j + 1));
-                    engineParts.Add(GetEngineParts(list, i - 1, j - 1));
+                    gearRatios.Add(GetEngineParts(list, i - 1, j + 1));
+                    gearRatios.Add(GetEngineParts(list, i - 1, j - 1));
                 }   
-        }
+            }
+            if(gearRatios.Where(x => x != 0).Count() == 2)
+                engineParts.Add(gearRatios.Where(x => x != 0).Aggregate(1, (x,y) => x * y));    
         }
 
         return engineParts.Sum();
@@ -49,7 +52,7 @@ public class Day3Service
     private static int GetEngineParts(List<string> list, int newX, int newY)
     {
         if (!OutOfBoundsCheck(list, newX, newY)) return 0;
-        if (newX < 0 || !Char.IsNumber(list[newX][newY]))
+        if (newX < 0 || !Char.IsNumber(list[newX][newY]) )
             return 0;
         return GetFullNumber(list, newX, newY);
     }
@@ -60,30 +63,6 @@ public class Day3Service
         return true;
     }
 
-    private static int GetEnginePartsAbove(List<string> list, int x, int y)
-    {
-        if (x == 0 || !Char.IsNumber(list[x - 1][y]))
-            return 0;
-        return GetFullNumber(list, x - 1, y);
-    }
-    private static int GetEnginePartsBelow(List<string> list, int x, int y)
-    {
-        if (x == list.Count || !Char.IsNumber(list[x + 1][y]))
-            return 0;
-        return GetFullNumber(list, x + 1, y);
-    }
-    private static int GetEnginePartsLeft(List<string> list, int x, int y)
-    {
-        if (x == 0 || x == list.Count || !Char.IsNumber(list[x][y-1]) || y-1 < 0)
-            return 0;
-        return GetFullNumber(list, x, y-1);
-    }
-    private static int GetEnginePartsRight(List<string> list, int x, int y)
-    {
-        if (x == 0 || x == list.Count || !Char.IsNumber(list[x][y+1]) || y +1 == list[x].Length)
-            return 0;
-        return GetFullNumber(list, x, y+1);
-    }
     private static int GetFullNumber(List<string> list, int x, int y)
     {
         var start = y;
