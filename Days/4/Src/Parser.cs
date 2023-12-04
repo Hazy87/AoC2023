@@ -1,5 +1,4 @@
 using Days.Helpers;
-using Flurl.Util;
 
 public class Day4Service
 {
@@ -27,16 +26,6 @@ public class Day4Service
             }
         });
         return cards.Select(x => x.Count).Sum();
-    }
-
-    private static int Score(IEnumerable<int> enumerable)
-    {
-        var counter = 0;
-        foreach (var score in enumerable)
-        {
-            counter =+ 1;
-        }
-        return counter;
     }
 }
 
